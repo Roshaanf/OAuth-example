@@ -4,24 +4,33 @@ var port = process.env.PORT || 3000;
 var app = express();
 
 
-app.get("/abc", function (req, res, next) {
-
- console.log("req.query: ", req.query);
-
- var client_id = req.query.client_id
- var redirect_uri = req.query.redirect_uri
- var state = req.query.state
- var response_type = req.query.response_type
-
- var YOUR_PROJECT_ID = 'agentproject-be016';
- var ACCESS_TOKEN = 'YWJjZGVmZ2hpamtsbW5vcA==';
-
- res.redirect('https://oauth-redirect.googleusercontent.com/r/' + YOUR_PROJECT_ID + '#access_token=' + ACCESS_TOKEN + '&token_type=bearer&state=' + state);
+app.post("/login", function (req, res, next) {
+    res.sendFile('views/index.html', { root: __dirname })
 
 });
 
+
+
+
+app.get("/abc", function (req, res, next) {
+    console.log("req.query: ", req.query);
+    var client_id = req.query.client_id
+    var redirect_uri = req.query.redirect_uri
+    var state = req.query.state
+    var response_type = req.query.response_type
+
+    var YOUR_PROJECT_ID = 'agentproject-be016';
+    var ACCESS_TOKEN = 'YWJjZGVmZ2hpamtsbW5vcA==';
+
+    res.redirect('https://oauth-redirect.googleusercontent.com/r/' + YOUR_PROJECT_ID + '#access_token=' + ACCESS_TOKEN + '&token_type=bearer&state=' + state);
+});
+
+
+
+
+
 app.listen(port, function () {
- console.log("listening on " + port);
+    console.log("listening on " + port);
 })
 
 
