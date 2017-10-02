@@ -8,10 +8,10 @@ app.get("/abc", function (req, res, next) {
 
  console.log("req.query: ", req.query);
 
- var client_id = app.query.client_id
- var redirect_uri = app.query.redirect_uri
- var state = app.query.state
- var response_type = app.query.response_type
+ var client_id = req.query.client_id
+ var redirect_uri = req.query.redirect_uri
+ var state = req.query.state
+ var response_type = req.query.response_type
 
  var YOUR_PROJECT_ID = 'agentproject-be016';
  var ACCESS_TOKEN = 'YWJjZGVmZ2hpamtsbW5vcA==';
