@@ -20,7 +20,7 @@ app.get("/abc", function (req, res, next) {
     var response_type = req.query.response_type
 
     var YOUR_PROJECT_ID = 'agentproject-be016';
-    var ACCESS_TOKEN = 'YWJjZGVmZ2hpamtsbW5vcA==';
+    var ACCESS_TOKEN = 'abcd';
 
     res.redirect('https://oauth-redirect.googleusercontent.com/r/' + YOUR_PROJECT_ID + '#access_token=' + ACCESS_TOKEN + '&token_type=bearer&state=' + state);
 });
